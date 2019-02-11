@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="paycell">
+  <div ng-controller="initController">
+    <table>
+      <tr>
+        <td><label>hostAccount</label></td>
+        <td><input type="text" ng-model="hostAccount" /></td>
+      </tr>
+      <tr>
+        <td><label>language</label></td>
+        <td><input type="text" ng-model="language" /></td>
+      </tr>
+      <tr>
+        <td><label>amount</label></td>
+        <td><input type="text" ng-model="amount" /></td>
+      </tr>
+      <tr>
+        <td><label>currency</label></td>
+        <td><input type="text" ng-model="currency" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentSecurity</label></td>
+        <td><input type="text" ng-model="paymentSecurity" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentReferenceNumber</label></td>
+        <td>
+          <input id="paymentReferenceNumber" readonly="true" type="text" ng-model="paymentReferenceNumber" />
+          <input ng-show="paymentReferenceNumber" type="button" value="check" onclick="window.open('/check.html?paymentReferenceNumber='+paymentReferenceNumber.value,'_blank')" />
+        </td>
+      </tr>
+      <tr>
+        <td><label>trackingUrl</label></td>
+        <td><a target="_blank" href="{{trackingUrl}}">{{trackingUrl}}</a></td>
+      </tr>
+    </table>
+    <br>
+    <label>instalmentPlan</label>
+    <table>
+      <thead>
+        <tr>
+          <th>lineId</th>
+          <th>paymentMethodType</th>
+          <th>cardBrand</th>
+          <th>count</th>
+          <th>amount</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="line in instalmentPlan">
+          <td>
+            <input readonly="true" type="text" ng-model="line.lineId" />
+          </td>
+          <td>
+            <input type="text" ng-model="line.paymentMethodType" />
+          </td>
+          <td>
+            <input type="text" ng-model="line.cardBrand" />
+          </td>
+          <td>
+            <input type="text" ng-model="line.count" />
+          </td>
+          <td>
+            <input type="text" ng-model="line.amount" />
+          </td>
+          <td>
+            <input ng-click="deleteInstalmentPlan(line.lineId)" type="button" value="Delete" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input ng-click="addInstalmentPlan()" type="button" value="Add Instalment Plan" />
+    <input ng-click="init()" type="button" value="Init" />
+  </div>
+
+  <script type="application/javascript" src="/controllers/InitController.js"></script>
+</body>
+
+</html>

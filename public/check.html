@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="paycell" ng-controller="checkController">
+
+    <table>
+      <tr>
+        <td><label>originalPaymentReferenceNumber</label></td>
+        <td><input readonly="true" ng-model="originalPaymentReferenceNumber" /></td>
+      </tr>
+      <tr>
+        <td><label>responseCode</label></td>
+        <td><input readonly="true" ng-model="responseCode" /></td>
+      </tr>
+      <tr>
+        <td><label>responseDescription</label></td>
+        <td><input readonly="true" ng-model="responseDescription" /></td>
+      </tr>
+      <tr>
+        <td><label>acquirerbankCode</label></td>
+        <td><input readonly="true" ng-model="acquirerbankCode" /></td>
+      </tr>
+      <tr>
+        <td><label>msisdn</label></td>
+        <td><input readonly="true" ng-model="msisdn" /></td>
+      </tr>
+      <tr>
+        <td><label>amount</label></td>
+        <td><input readonly="true" ng-model="amount" /></td>
+      </tr>
+      <tr>
+        <td><label>approvalCode</label></td>
+        <td><input readonly="true" ng-model="approvalCode" /></td>
+      </tr>
+      <tr>
+        <td><label>currency</label></td>
+        <td><input readonly="true" ng-model="currency" /></td>
+      </tr>
+      <tr>
+        <td><label>installmentCount</label></td>
+        <td><input readonly="true" ng-model="installmentCount" /></td>
+      </tr>
+      <tr>
+        <td><label>orderId</label></td>
+        <td><input readonly="true" ng-model="orderId" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentSecurity</label></td>
+        <td><input readonly="true" ng-model="paymentSecurity" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentDate</label></td>
+        <td><input readonly="true" ng-model="paymentDate" /></td>
+      </tr>
+      <tr>
+        <td><label>reconcilationDate</label></td>
+        <td><input readonly="true" ng-model="reconcilationDate" /></td>
+      </tr>
+      <tr>
+        <td><label>issuerBankCode</label></td>
+        <td><input readonly="true" ng-model="issuerBankCode" /></td>
+      </tr>
+      <tr>
+        <td><label>status</label></td>
+        <td><input readonly="true" ng-model="status" /></td>
+      </tr>
+      <tr>
+        <td><label>statusExplanation</label></td>
+        <td><input readonly="true" ng-model="statusExplanation" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentMethodId</label></td>
+        <td><input readonly="true" ng-model="paymentMethodId" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentMethodNumber</label></td>
+        <td><input readonly="true" ng-model="paymentMethodNumber" /></td>
+      </tr>
+      <tr>
+        <td><label>paymentMethodType</label></td>
+        <td><input readonly="true" ng-model="paymentMethodType" /></td>
+      </tr>
+    </table>
+    <div ng-show="orderId">
+      <input type="button" value="Reverse" ng-click="reverse()" ng-disabled="status != 0" />
+
+      <input type="button" value="Refund" ng-click="refund()" ng-disabled="status != 0" />
+      <label>refundAmount</label>
+      <input type="number" ng-model="refundAmount" />
+    </div>
+    <script type="application/javascript" src="controllers/CheckController.js"></script>
+  </div>
+</body>
+
+</html>

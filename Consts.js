@@ -1,0 +1,10 @@
+exports.initMethodUrl = 'https://sdk-services-test.turkcell.com.tr/api/Session/Init';
+exports.queryStatuMethodUrl = "https://tpay-test.turkcell.com.tr/tpay/provision/services/cancelrestful/cancelService/queryPaymentStatus/";
+exports.reverseMethodUrl = "https://tpay-test.turkcell.com.tr/tpay/provision/services/cancelrestful/cancelService/reversePayment/";
+exports.refundMethodUrl = "https://tpay-test.turkcell.com.tr/tpay/provision/services/cancelrestful/cancelService/refundPayment/";
+exports.applicationName = 'PORTALTEST';
+exports.applicationPassword = 'ZDyXmMLWE2z7OzJU';
+exports.merchantCode = '1186';
+exports.secureCode = 'r92txmtCw8M0';
+exports.terminalCode = '12345';
+exports.referenceNumberPrefix = '001';
